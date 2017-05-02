@@ -1,0 +1,36 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+hostname: lumanapi
+name: lumanapi
+provider: virtualbox
+
+authorize: ~/.ssh/id_vagrant_rsa.pub
+
+keys:
+    - ~/.ssh/id_vagrant_rsa
+
+folders:
+    - map: "/Users/martinashcroft/websites/lumanApi"
+      to: "/home/vagrant/lumanapi"
+
+sites:
+    - map: lumenapi.com
+      to: "/home/vagrant/lumanapi/public"
+
+databases:
+    - homestead
+
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp
